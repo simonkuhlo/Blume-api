@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-prefix: str = "/questions"
+prefix: str = "/entries"
 
 router = APIRouter(prefix=prefix)
 
