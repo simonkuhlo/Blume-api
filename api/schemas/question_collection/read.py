@@ -6,3 +6,6 @@ class Read(BaseModel):
     name: str
     description: str
     questions: list[QuestionRead]
+
+    class Config:
+        from_attributes = True

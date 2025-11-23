@@ -3,6 +3,9 @@ from schemas.answer_type import AnswerType
 
 class Read(BaseModel):
     id: int
-    header: str
+    title: str
     description: str
-    answer_type: AnswerType
+    #answer_type: AnswerType
+
+    class Config:
+        from_attributes = True

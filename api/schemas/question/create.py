@@ -2,6 +2,6 @@ from pydantic import BaseModel
 from ..answer_type import AnswerType
 
 class Create(BaseModel):
-    header: str
+    title: str
     description: str
-    answer_type: AnswerType
+    #answer_type: AnswerType

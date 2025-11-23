@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 class Question(Base):
     __tablename__ = "question"
     title: Mapped[str]
-    value: Mapped[str]
+    description: Mapped[str]
     collections: Mapped[list["QuestionCollection"]] = relationship(secondary=association_table, back_populates="questions")
     answers: Mapped[list["Answer"]] = relationship("Answer", back_populates="question")
 

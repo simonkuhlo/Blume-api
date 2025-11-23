@@ -9,3 +9,6 @@ class Answer(BaseModel):
     user: UserRead
     entry: EntryRead
     string_value: str
+
+    class Config:
+        from_attributes = True

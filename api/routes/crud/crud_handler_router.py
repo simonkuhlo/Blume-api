@@ -18,16 +18,16 @@ class CRUDHandlerRouter(APIRouter):
             return {"object": read_object}
 
         @self.post("/")
-        async def create_user(create_object: handler.create_schema):
-            read_object = self.handler.create(create_object)
+        async def create_object(created_object: handler.create_schema):
+            read_object = self.handler.create(created_object)
             return {"object": read_object}
 
         @self.put("/{object_id}")
-        async def update_user(update_object: handler.update_schema, object_id: int):
-            read_object = self.handler.update(object_id, update_object)
+        async def update_object(updated_object: handler.update_schema, object_id: int):
+            read_object = self.handler.update(object_id, updated_object)
             return {"object": read_object}
 
         @self.delete("/{object_id}")
-        async def delete_user(object_id: int):
+        async def delete_object(object_id: int):
             self.handler.delete(object_id)
             return {"detail": "Object deleted"}

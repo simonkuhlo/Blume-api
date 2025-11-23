@@ -7,3 +7,6 @@ class EntryRead(BaseModel):
     id: int
     user: UserRead
     answers: list[EntryAnswerRead]
+
+    class Config:
+        from_attributes = True
