@@ -1,8 +1,14 @@
 {% if entry_id > 0 %}
 {% set offset = -1 %}
-{% include "book/entry_page.j2" %}
+{% with entry_id = entry_id + offset %}
+    {% include "book/entry_page.j2" %}
+{% endwith %}
 {% endif %}
 {% set offset = 0 %}
-{% include "book/entry_page.j2" %}
+{% with entry_id = entry_id + offset %}
+    {% include "book/entry_page.j2" %}
+{% endwith %}
 {% set offset = 1 %}
-{% include "book/entry_page.j2" %}
+{% with entry_id = entry_id + offset %}
+    {% include "book/entry_page.j2" %}
+{% endwith %}

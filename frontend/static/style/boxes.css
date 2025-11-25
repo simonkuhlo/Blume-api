@@ -1,4 +1,9 @@
 .box-h {
     display: flex;
+    flex-direction: row;
+}
+
+.box-v {
+    display: flex;
     flex-direction: column;
 }

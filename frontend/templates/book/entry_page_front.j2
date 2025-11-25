@@ -1,3 +1,24 @@
-This is page 1 of entry {{ entry_id }}
-<button hx-get="/book/entry/{{ entry_id }}/prev" hx-target="#page-root">Back</button>
 
+<div class="box-v entry-container">
+    <div class="entry-element entry-topic"><h2>This is page 1 of entry {{ entry_id }} and the persons name goes here</h2></div>
+    <div class="entry-element box-h entry-header">
+        <div class="spacer-h">Header Information (Name, age, etc.)</div>
+        <div class="entry-header-image">
+            Image
+        </div>
+    </div>
+
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <button hx-get="/book/entry/{{ entry_id }}/prev" hx-target="#page-root">Back</button>
+</div>

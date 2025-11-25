@@ -58,6 +58,11 @@ async def get_next_page(request: Request, index: int = 0):
 
 @app.get("/book/entry/{index}/{transition}/", response_class=HTMLResponse)
 async def get_entry(request: Request, index: int = 0, transition: Literal["next", "prev"] = "next"):
+    match transition:
+        case "next":
+            index = index + 1
+        case "prev":
+            index = index - 1
     return templates.TemplateResponse("book/entry.j2", {"request": request, "entry_id": index, "transition": transition})
 
 @app.get("/favicon.ico")

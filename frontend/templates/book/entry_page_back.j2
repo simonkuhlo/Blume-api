@@ -1,2 +1,23 @@
-This is page 2 of entry {{ entry_id }}
-<button hx-get="/book/entry/{{ entry_id + 1 }}/next" hx-target="#page-root">Next</button>
+<div class="box-v entry-container">
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+    <div class="entry-element entry-answer">
+        <div class="entry-answer-question">Question</div>
+        <div class="entry-answer-value">Answer</div>
+    </div>
+<button hx-get="/book/entry/{{ entry_id }}/next" hx-target="#page-root">Next</button>
+</div>
