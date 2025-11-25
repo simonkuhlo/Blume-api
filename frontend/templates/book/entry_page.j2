@@ -3,7 +3,6 @@
 
   {% set entry_id = entry_id + offset%}
 <div class="back" data-entry_id="{{ entry_id }}" id="p{{ entry_id }}b">
-    {{ transition_mode }}
     {% include "book/entry_page_front.j2" %}
   </div>
     {% set entry_id = entry_id - 1%}
