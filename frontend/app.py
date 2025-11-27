@@ -62,8 +62,6 @@ async def get_entry(request: Request, index: int = 0, transition: Literal["next"
     match transition:
         case "next":
             index = index + 1
-        case "prev":
-            index = index - 1
     previous_entry = get_entry_data(index - 1)
     current_entry = get_entry_data(index)
     next_entry = get_entry_data(index + 1)

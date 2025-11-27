@@ -7,3 +7,13 @@
     display: flex;
     flex-direction: column;
 }
+
+.box-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}

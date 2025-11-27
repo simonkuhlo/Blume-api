@@ -3,13 +3,14 @@
 
 {% block main %}
 <link rel="stylesheet" href="/static/style/book.css">
+<link rel="stylesheet" href="/static/style/entry.css">
 <div class="book-container">
 <div class="book">
 
   <div class="flip-book">
       <div class="book-cover already_flipped"></div>
       <div class="book-3d" id="page-root">
-          <button hx-get="/book/entry/0/next" hx-target="#page-root">Start</button>
+          {% include "book/book_start_page.j2" %}
       </div>
       <div class="book-cover"></div>
   </div>

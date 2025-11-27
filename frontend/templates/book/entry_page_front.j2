@@ -1,23 +1,36 @@
 <div class="box-v entry-container">
+    {% if entry.answers != None%}
     <div class="entry-element entry-answer">
         <div class="entry-answer-question">{{ entry.answers[0].question.title }}</div>
         <div class="entry-answer-value">{{ entry.answers[0].string_value }}</div>
     </div>
+    {% if entry.answers | length > 1 %}
     <div class="entry-element entry-answer">
         <div class="entry-answer-question">{{ entry.answers[0].question.title }}</div>
         <div class="entry-answer-value">{{ entry.answers[0].string_value }}</div>
     </div>
+    {% endif %}
+    {% if entry.answers | length > 2 %}
     <div class="entry-element entry-answer">
         <div class="entry-answer-question">{{ entry.answers[0].question.title }}</div>
         <div class="entry-answer-value">{{ entry.answers[0].string_value }}</div>
     </div>
+    {% endif %}
+    {% if entry.answers | length > 3 %}
     <div class="entry-element entry-answer">
         <div class="entry-answer-question">{{ entry.answers[0].question.title }}</div>
         <div class="entry-answer-value">{{ entry.answers[0].string_value }}</div>
     </div>
+    {% endif %}
+    {% if entry.answers | length > 4 %}
     <div class="entry-element entry-answer">
         <div class="entry-answer-question">{{ entry.answers[0].question.title }}</div>
         <div class="entry-answer-value">{{ entry.answers[0].string_value }}</div>
     </div>
-<button hx-get="/book/entry/{{ entry.id }}/next" hx-target="#page-root">Next</button>
+    {% endif %}
+    {% endif %}
+    <div class="box-h control-element">
+        <div class="spacer-h"></div>
+        <button hx-get="/book/entry/{{ entry.id }}/next" hx-target="#page-root">Next</button>
+    </div>
 </div>

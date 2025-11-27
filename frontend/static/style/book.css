@@ -90,12 +90,14 @@
     padding: 10px;
 }
 
-.flip button {
-  position: absolute;
-  bottom: 13px;
-  right: 13px;
-  cursor: pointer;
-  color: #000;
+.flip .control-element {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #000;
+    position: absolute;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 @keyframes flipAnimation {
