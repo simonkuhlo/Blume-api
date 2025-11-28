@@ -10,22 +10,22 @@ class CRUDHandlerRouter(APIRouter):
         @self.get("/")
         async def get_list(start_id: int = Query(0, ge=0), limit: int = Query(100, ge=1)):
             read_objects = self.handler.list(start_id=start_id, limit=limit)
-            return {"objects": read_objects}
+            return read_objects
 
         @self.get("/{object_id}")
         async def get_object(object_id: int):
             read_object = self.handler.get(object_id)
-            return {"object": read_object}
+            return read_object
 
         @self.post("/")
         async def create_object(created_object: handler.create_schema):
             read_object = self.handler.create(created_object)
-            return {"object": read_object}
+            return read_object
 
         @self.put("/{object_id}")
         async def update_object(updated_object: handler.update_schema, object_id: int):
             read_object = self.handler.update(object_id, updated_object)
-            return {"object": read_object}
+            return read_object
 
         @self.delete("/{object_id}")
         async def delete_object(object_id: int):
