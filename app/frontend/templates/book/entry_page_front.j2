@@ -2,33 +2,28 @@
     {% if entry != None %}
     <div class="box-v entry-container">
         {% if entry.answers != None%}
-            <div class="entry-element entry-answer">
-                <div class="entry-answer-question">{{ entry.answers[0].question.description }}</div>
-                <div class="entry-answer-value">{{ entry.answers[0].value }}</div>
-            </div>
+            {% with answer = entry.answers[0] %}
+                {% include "book/elements/answer_viewer.j2" %}
+            {% endwith %}
             {% if entry.answers | length > 1 %}
-            <div class="entry-element entry-answer">
-                <div class="entry-answer-question">{{ entry.answers[1].question.description }}</div>
-                <div class="entry-answer-value">{{ entry.answers[1].value }}</div>
-            </div>
+            {% with answer = entry.answers[1] %}
+                {% include "book/elements/answer_viewer.j2" %}
+            {% endwith %}
             {% endif %}
             {% if entry.answers | length > 2 %}
-            <div class="entry-element entry-answer">
-                <div class="entry-answer-question">{{ entry.answers[2].question.description }}</div>
-                <div class="entry-answer-value">{{ entry.answers[2].value }}</div>
-            </div>
+            {% with answer = entry.answers[2] %}
+                {% include "book/elements/answer_viewer.j2" %}
+            {% endwith %}
             {% endif %}
             {% if entry.answers | length > 3 %}
-            <div class="entry-element entry-answer">
-                <div class="entry-answer-question">{{ entry.answers[3].question.description }}</div>
-                <div class="entry-answer-value">{{ entry.answers[3].value }}</div>
-            </div>
+            {% with answer = entry.answers[3] %}
+                {% include "book/elements/answer_viewer.j2" %}
+            {% endwith %}
             {% endif %}
             {% if entry.answers | length > 4 %}
-            <div class="entry-element entry-answer">
-                <div class="entry-answer-question">{{ entry.answers[4].question.description }}</div>
-                <div class="entry-answer-value">{{ entry.answers[4].value }}</div>
-            </div>
+            {% with answer = entry.answers[4] %}
+                {% include "book/elements/answer_viewer.j2" %}
+            {% endwith %}
             {% endif %}
         {% endif %}
         <div class="box-h control-element">
