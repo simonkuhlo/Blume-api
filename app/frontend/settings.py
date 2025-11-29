@@ -1,4 +1,4 @@
-server_host = "192.168.178.38"
+server_host = "0.0.0.0"
 server_port = 6969
 server_debug_mode = True
 
