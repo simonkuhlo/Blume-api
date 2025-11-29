@@ -76,6 +76,12 @@ async def fetch_users_from_backend():
         response.raise_for_status()
         return response.json()  # Pydantic auto-validates against User model
 
+@app.get("/book/answer/{index}/edit/", response_class=HTMLResponse)
+async def get_entry(request: Request, answer_id: int = 0):
+    return templates.TemplateResponse("book/elements/answer_edit_input.j2", {"request": request,
+                                                        "answer_id": answer_id,
+                                                        })
+
 @app.get("/favicon.ico")
 async def get_favicon():
     return FileResponse("static/img/favicon.ico")

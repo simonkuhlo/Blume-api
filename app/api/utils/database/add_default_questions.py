@@ -17,7 +17,7 @@ def add_default_questions(session: Session):
             ),
             Question(
                 title="Dream",
-                description="What is your dream?",
+                description="What do you want to do when you are older?",
             )
         ]
     )

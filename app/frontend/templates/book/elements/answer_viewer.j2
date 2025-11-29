@@ -3,10 +3,10 @@
         <div class="box-h">
             <h3>{{ answer.question.description }}</h3>
             <div class="spacer-h"></div>
-            <button>Edit</button>
+            <button  hx-get="/book/answer/{{ answer.id }}/edit" hx-target="#answer-viewer-{{ answer.id }}-main">Edit</button>
         </div>
     </div>
-    <div class="answer-viewer-main">
+    <div class="answer-viewer-main" id="answer-viewer-{{ answer.id }}-main">
         {{ answer.value }}
     </div>
 </div>
