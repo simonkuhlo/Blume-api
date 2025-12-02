@@ -79,13 +79,6 @@ async def get_entry(request: Request, index: int = 0, transition: Literal["next"
                                                         "next_entry": next_entry
                                                         })
 
-@app.get("/test", response_model=list[UserRead])
-async def fetch_users_from_backend():
-    async with httpx.AsyncClient() as client:
-        response = await client.get(f"{settings.api_url}/user/")
-        response.raise_for_status()
-        return response.json()  # Pydantic auto-validates against User model
-
 @app.get("/book/answer/{index}/edit/", response_class=HTMLResponse)
 async def get_entry(request: Request, answer_id: int = 0):
     return templates.TemplateResponse("book/elements/answer_edit_input.j2", {"request": request,
