@@ -1,8 +1,8 @@
 from typing import Optional
-from api.schemas.entry import EntryRead
-from api.schemas.answer import AnswerRead, EntryAnswerRead
-from api.schemas.question import QuestionRead
-from api.schemas.user import UserRead
+from backend.schemas.entry import EntryRead
+from backend.schemas.answer import AnswerRead, EntryAnswerRead
+from backend.schemas.question import QuestionRead
+from backend.schemas.user import UserRead
 import httpx
 import settings
 

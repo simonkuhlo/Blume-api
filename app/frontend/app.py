@@ -1,13 +1,15 @@
-from typing import Literal
+from typing import Literal, Annotated
 import settings
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import FileResponse
+from backend.schemas.entry import EntryCreate
 from services.get_entry_data import get_entry_data, get_entry_data_new
-from api.schemas.user import UserRead
+from services import create_entry
+from backend.schemas.user import UserRead
 import httpx
 
 app = FastAPI(title=settings.app_title, summary=settings.app_summary, description=settings.app_description, version=settings.app_version)
@@ -55,8 +57,8 @@ async def show_creator_app(request: Request):
     return templates.TemplateResponse("apps/entry_creator_app.j2", {"request": request})
 
 @app.post("/entry/creator", response_class=HTMLResponse)
-async def create_entry(request: Request):
-    print(request)
+async def create_entry_endpoint(user_id: Annotated[int, Form()]):
+    await create_entry.create_entry(user_id)
 
 @app.get("/book", response_class=HTMLResponse)
 async def get_book(request: Request):

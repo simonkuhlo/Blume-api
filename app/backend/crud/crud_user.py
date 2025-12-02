@@ -1,4 +1,4 @@
-from database import session
+from data.database import session
 from models import User
 from schemas.user import UserRead, UserCreate, UserUpdate
 from .base import CRUDHandler

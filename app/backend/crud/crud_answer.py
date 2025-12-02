@@ -1,4 +1,4 @@
-from database import session
+from data.database import session
 from models import Answer
 from schemas.answer import AnswerRead, AnswerCreate, AnswerUpdate
 from .base import CRUDHandler

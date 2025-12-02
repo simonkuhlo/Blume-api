@@ -1,4 +1,4 @@
-from database import session
+from data.database import session
 from models import QuestionCollection
 from schemas.question_collection import QuestionCollectionRead, QuestionCollectionCreate, QuestionCollectionUpdate
 from .base import CRUDHandler

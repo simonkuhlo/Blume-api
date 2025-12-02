@@ -1,4 +1,4 @@
-from database import session
+from data.database import session
 from models import Entry
 from schemas.entry import EntryRead, EntryCreate, EntryUpdate
 from .base import CRUDHandler
