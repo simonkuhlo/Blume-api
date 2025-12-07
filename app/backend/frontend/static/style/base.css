@@ -1,0 +1,17 @@
+button {
+    border: 1px solid black;
+    background: white;
+}
+
+button:hover {
+    background: lightyellow;
+}
+
+button:active {
+    background: antiquewhite;
+}
+
+.button_inline {
+    border-top: none;
+    border-bottom: none;
+}

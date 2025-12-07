@@ -1,0 +1,12 @@
+<div class="box-v entry_browser-inner_frame">
+    <div class="box-h entry_browser-toolbar">
+        <div class="spacer-h"></div>
+        <button class="button">+ Add Entry</button>
+        <button>Refresh</button>
+    </div>
+    <div class="box-v entry_browser-content_root">
+        {% for entry in entries %}
+            {% include "apps/admin/entry_manager/entry_browser_element.j2" %}
+        {% endfor %}
+    </div>
+</div>

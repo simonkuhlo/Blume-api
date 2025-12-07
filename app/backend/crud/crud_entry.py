@@ -1,3 +1,5 @@
+from typing import Optional
+
 from data.database import session
 from models import Entry
 from schemas.entry import EntryRead, EntryCreate, EntryUpdate, EntryReadOwner
@@ -13,6 +15,12 @@ class EntryCRUD(CRUDHandler[Entry, EntryRead, EntryCreate, EntryUpdate]):
         self.session.add(db_item)
         self.session.commit()
         self.session.refresh(db_item)
+        return EntryReadOwner.model_validate(db_item)
+
+    def get_admin(self, object_id: int) -> Optional[EntryReadOwner]:
+        db_item = self.session.query(self.db_model).filter(self.db_model.id == object_id).first()
+        if not db_item:
+            return None
         return EntryReadOwner.model_validate(db_item)
 
 handler: EntryCRUD = EntryCRUD()

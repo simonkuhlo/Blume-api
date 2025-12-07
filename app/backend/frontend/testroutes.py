@@ -15,8 +15,16 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 templates = Jinja2Templates(directory=f"{BASE_DIR}/templates")
 router = APIRouter(prefix="/tests")
 
-@router.post("/entry/create")
-async def create_otp(request: Request, new_entry: Annotated[EntryCreate, Form()]):
-    new_entry = EntryCreate()
-    created_entry = entry_crud.create(new_entry)
-    return created_entry
+@router.get("/admin/entry_manager", response_class=HTMLResponse)
+async def admin_entry_manager(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse("apps/admin/entry_manager/main.j2", {"request": request})
+
+@router.get("/admin/entry_browser", response_class=HTMLResponse)
+async def admin_entry_manager(request: Request) -> HTMLResponse:
+    entries = entry_crud.list()
+    return templates.TemplateResponse("apps/admin/entry_manager/entry_browser.j2", {"request": request, "entries": entries})
+
+@router.get("/admin/entry_details/{entry_id}", response_class=HTMLResponse)
+async def admin_entry_details(request: Request, entry_id: int) -> HTMLResponse:
+    entry = entry_crud.get_admin(entry_id)
+    return templates.TemplateResponse("apps/admin/entry_manager/entry_details.j2", {"request": request, "entry": entry})
