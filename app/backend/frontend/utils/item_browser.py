@@ -5,7 +5,7 @@ class ItemBrowserObjectButton:
     def __init__(self,
                  on_click_url: str,
                  name: str = "Unnamed item browser button",
-                 hx_target: str = "this"
+                 hx_target: str = "this",
                  ):
         self.name: str = name
         self.on_click_url: str = on_click_url
@@ -17,9 +17,15 @@ class ItemBrowserObject:
     def __init__(self,
                  title: str = "No title provided",
                  on_click_url: Optional[str] = None,
+                 template_path: Optional[str] = None,
+                 hx_target: str = "this",
+                 buttons: list[ItemBrowserObjectButton] = [],
                  ):
         self.title: str = title
         self.on_click_url: Optional[str] = on_click_url
+        self.template_path: Optional[str] = template_path
+        self.hx_target: str = hx_target
+        self.buttons: list[ItemBrowserObjectButton] = buttons
 
 class ItemBrowser:
     def __init__(self,

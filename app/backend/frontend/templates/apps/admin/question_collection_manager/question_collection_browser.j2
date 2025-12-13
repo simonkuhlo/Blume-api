@@ -1,16 +1,3 @@
-<div class="browser_frame">
-    <div class="app_widget-toolbar">
-        Question Collection Browser
-        <div class="spacer-h"></div>
-        <button hx-post="/api/crud/question_collection/create">+ Add Collection</button>
-        <button hx-get="/admin/question_collection_browser" hx-target="#question_collection_browser-root">Refresh</button>
-    </div>
-    <div class="box-h" style="height: 100%">
-        <div class="browser-content_root">
-            {% for question_collection in question_collections %}
-                {% include "apps/admin/question_collection_manager/question_collection_browser_element.j2" %}
-            {% endfor %}
-        </div>
-        <div style="width: 10px; height: 100%; background-color: #2196F3"></div>
-    </div>
-</div>
+{% with browser = browser %}
+    {% include "apps/elements/object_browser.j2" %}
+{% endwith %}

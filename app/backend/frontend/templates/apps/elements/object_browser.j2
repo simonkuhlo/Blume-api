@@ -3,16 +3,13 @@
     <div class="app_widget-toolbar">
         {{ browser.name }}
         <div class="spacer-h"></div>
-        {% if browser.create_item_url != None %}
-            <button hx-post={{ browser.create_item_url }}>+ Add Collection</button>
-        {% endif %}
         <button hx-get={{ browser.refresh_url }} hx-target="this" hx-swap="outerHTML">Refresh</button>
     </div>
     <div class="box-h" style="height: 100%">
         <div class="browser-content_root">
             {% for object in browser.objects %}
-                {% if browser.element_template_path != None %}
-                    {% include browser.element_template_path %}
+                {% if object.template_path != None %}
+                    {% include browser.template_path %}
                 {% else %}
                     {% include "apps/elements/object_browser_default_element.j2" %}
                 {% endif %}

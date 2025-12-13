@@ -1,6 +1,6 @@
 from . import entries
 
-server_host = "192.168.178.38"
+server_host = "localhost"
 server_port = 6969
 server_debug_mode = True
 

@@ -28,8 +28,10 @@
         <div class="browser_frame border">
             <div class="box-h" style="height: 100%">
                 <div class="browser-content_root">
-                    {% for question in question_collection.questions %}
-                        <div class="browser_element">{{ question.id }} - {{ question.title }} <div class="spacer-h"></div> <button>Add</button></div>
+                    {% for question in unrelated_questions %}
+                        <div class="browser_element">{{ question.id }} - {{ question.title }} <div class="spacer-h"></div>
+                            <button hx-put="admin/question_collection_manager/editor/{{ question_collection.id }}/add_question/{{ question.id }}">Add</button>
+                        </div>
                         {% endfor %}
                 </div>
             <div style="width: 10px; height: 100%; background-color: #2196F3"></div>
