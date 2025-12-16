@@ -23,7 +23,7 @@ class ItemBrowserObject:
                  title: str = "No title provided",
                  on_click_url: Optional[str] = None,
                  template_path: Optional[str] = None,
-                 hx_target: str = "this",
+                 hx_target: str = None,
                  buttons: list[ItemBrowserObjectButton] = [],
                  ):
         self.title: str = title

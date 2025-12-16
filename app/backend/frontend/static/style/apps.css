@@ -7,6 +7,7 @@
     height: 100%;
     max-height: 500px;
     border: 1px solid black;
+    overflow: scroll;
 }
 
 .app_widget-toolbar {
@@ -79,14 +80,32 @@
 }
 
 .editor-table {
-
+    width: 100%;
 }
 
 .editor-table tr{
+    width: 100%;
+}
 
+.editor-table td:last-child{
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
 }
 
 .editor-table td{
+    vertical-align: top;
+    align-items: start;
+}
+
+.editor-table textarea {
     width: 100%;
-    vertical-align: top
+    height: 100px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.editor-table tr td input[type=text] {
+    width: 100%;
+    box-sizing: border-box
 }

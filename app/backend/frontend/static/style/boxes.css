@@ -9,6 +9,11 @@
     flex-direction: column;
 }
 
+.basic-spacing {
+    gap: 3px;
+    padding: 3px;
+}
+
 .box-center {
     width: 100%;
     padding-top: 100px;

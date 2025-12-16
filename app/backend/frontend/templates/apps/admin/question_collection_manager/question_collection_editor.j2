@@ -10,25 +10,25 @@
     </div>
     {% if question_collection != None %}
         <form>
-        <table>
+        <table class="editor-table">
             <tr>
                 <td>
                     <label for="title-edit">Title</label>
                 </td>
-                <td style="width: 100%">
-                    <input id="title-edit" name="title" type="text" value="{{ question_collection.title }}" style="width: 100%; box-sizing: border-box">
+                <td>
+                    <input id="title-edit" name="title" type="text" value="{{ question_collection.title }}">
                 </td>
             </tr>
             <tr>
-                <td style="vertical-align: top">
+                <td>
                     <label for="description-edit">Description</label>
                 </td>
                 <td>
-                    <textarea name="description" id="description-edit" style="width: 100%; box-sizing: border-box">{{ question_collection.description }}</textarea>
+                    <textarea name="description" id="description-edit">{{ question_collection.description }}</textarea>
                 </td>
             </tr>
         </table>
-        <div class="box-h" style="gap: 3px; padding-right: 3px;">
+        <div class="box-h basic-spacing">
             <div class="spacer-h"></div>
             <button hx-delete="/admin/question_collection_manager/editor/{{ question_collection.id }}" hx-target="closest .editor-frame" hx-swap="outerHTML">Delete</button>
             <button hx-put="/admin/question_collection_manager/editor/{{ question_collection.id }}" hx-target="closest .editor-frame" hx-swap="outerHTML">

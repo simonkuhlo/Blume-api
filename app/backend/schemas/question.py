@@ -29,3 +29,6 @@ class QuestionUpdate(BaseModel):
     description: str
     short: Optional[bool] = False
     #answer_type: AnswerType
+
+    class Config:
+        from_attributes = True
