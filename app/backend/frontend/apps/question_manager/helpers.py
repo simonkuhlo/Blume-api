@@ -17,5 +17,13 @@ def create_question_browser() -> ItemBrowser:
         name="Question relation browser",
         refresh_url=f"/admin/question_manager/browser",
         objects=browser_objects,
+        toolbar_buttons=[
+            ItemBrowserObjectButton(
+                on_click_url="/admin/question_manager/browser/create_question",
+                name="+ New Question",
+                hx_target="closest .browser_frame",
+                hx_swap="outerHTML"
+            )
+        ],
     )
     return browser
