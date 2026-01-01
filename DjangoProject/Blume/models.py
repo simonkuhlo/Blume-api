@@ -1,15 +1,10 @@
 from django.db import models
-
-class User(models.Model):
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-    is_admin = models.BooleanField(default=False)
-    email = models.EmailField()
+from django.contrib.auth.models import User
 
 class EntryV1(models.Model):
     ## Meta Information
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    secret = models.CharField(max_length=100)
+    secret = models.CharField(max_length=100, blank=True, null=True)
     published = models.BooleanField(default=True)
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
@@ -18,37 +13,37 @@ class EntryV1(models.Model):
     # I am...
     name = models.CharField(max_length=100)
     # Others also call me...
-    nicknames = models.CharField(max_length=500)
+    nicknames = models.CharField(max_length=500, blank=True, null=True)
     # My birthday is:
-    birthday = models.DateField()
+    birthday = models.DateField(blank=True, null=True)
     # I am this tall:
-    size = models.CharField(max_length=100)
+    size = models.CharField(max_length=100, blank=True, null=True)
     # Where I live
-    location = models.CharField(max_length=500)
+    location = models.CharField(max_length=500, blank=True, null=True)
     # How you can contact me (Email, Phone number, Discord)
-    contact = models.CharField(max_length=500)
+    contact = models.CharField(max_length=500, blank=True, null=True)
     #image = models.ImageField(upload_to='images/')
     # I really like...
-    likes = models.CharField(max_length=500)
+    likes = models.CharField(max_length=500, blank=True, null=True)
     # I really don't like...
-    dislikes = models.CharField(max_length=500)
+    dislikes = models.CharField(max_length=500, blank=True, null=True)
     # The best experience I've ever had:
-    best_experience = models.TextField()
+    best_experience = models.TextField(blank=True, null=True)
     # My favorite book:
-    favorite_food = models.CharField(max_length=500)
+    favorite_food = models.CharField(max_length=500, blank=True, null=True)
     # My favorite animal:
-    favorite_animal = models.CharField(max_length=500)
+    favorite_animal = models.CharField(max_length=500, blank=True, null=True)
     # My favorite book:
-    favorite_book = models.CharField(max_length=500)
+    favorite_book = models.CharField(max_length=500, blank=True, null=True)
     # My favorite movie:
-    favorite_movie = models.CharField(max_length=500)
+    favorite_movie = models.CharField(max_length=500, blank=True, null=True)
     # My favorite music:
-    favorite_music = models.CharField(max_length=500)
+    favorite_music = models.CharField(max_length=500, blank=True, null=True)
     # I love to do...
-    favorite_activity = models.CharField(max_length=500)
+    favorite_activity = models.CharField(max_length=500, blank=True, null=True)
     # My biggest dream:
-    dream = models.TextField()
+    dream = models.TextField(blank=True, null=True)
     # In the future, I want to become...
-    want_to_become = models.TextField()
+    want_to_become = models.TextField(blank=True, null=True)
 
 
